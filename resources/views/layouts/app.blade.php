@@ -16,7 +16,13 @@
         @livewireStyles
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ mix('js/app.js') }}" ></script>
+        <script>
+            window.Echo.channel('signin')
+            .listen('LoginEvent',function(user){
+                console.log(user);
+            })
+        </script> 
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
@@ -40,7 +46,8 @@
         </div>
 
         @stack('modals')
-
+         
         @livewireScripts
+       
     </body>
 </html>

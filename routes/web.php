@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\LoginEvent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,8 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/call/event',function(){
+    $user=auth()->user();
+    event(new LoginEvent($user));
+});
