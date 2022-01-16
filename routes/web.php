@@ -24,5 +24,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('/call/event',function(){
     $user=auth()->user();
+    //dd($user);
     event(new LoginEvent($user));
 });

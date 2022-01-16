@@ -1,0 +1,18 @@
+.contain{
+    position: relative;
+}
+.chat-image{
+    position: absolute;
+    right:-450px;
+    transition:1s ease-in-out;    
+}
+
+.chat-image-hover{
+    position: absolute;
+    right: -100px;
+}
+
+.user{
+    position: absolute;
+    left:70px;
+}

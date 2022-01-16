@@ -12,17 +12,32 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/notify.css') }}">
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
         @livewireStyles
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" ></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script>
-            window.Echo.channel('signin')
+            $(function(){
+
+                alert('jquery');
+
+                window.Echo.channel('signin')
+            .subscribed(()=>{ console.log('sigin channel subscribed')})
             .listen('LoginEvent',function(user){
-                console.log(user);
-            })
+
+                $('.remove').removeClass('chat-image');
+                $('.remove').addClass('chat-image-hover animate__backInRight');
+                console.log(user.name);
+            });
+
+            });
+            
         </script> 
+        
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

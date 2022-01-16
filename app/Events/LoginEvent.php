@@ -7,10 +7,11 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class LoginEvent
+class LoginEvent implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -33,7 +34,12 @@ class LoginEvent
      */
     public function broadcastOn()
     {
-
+       //dd($this->user);
         return new Channel('signin');
+    }
+
+    public function broadcastWith(){
+
+        return ['user'=>$this->user];
     }
 }
