@@ -31,7 +31,17 @@
 
                 $('.remove').removeClass('chat-image');
                 $('.remove').addClass('chat-image-hover animate__backInRight');
-                console.log(user.name);
+
+                var puser=Object.assign({},user);
+                var parseuser=JSON.parse(JSON.stringify(puser));
+
+               // var parseuser=Object.entries(user);
+
+
+                setTimeout(() => {
+                    console.log(parseuser.name);
+                }, 100);
+                
             });
 
             });
