@@ -26,4 +26,4 @@ Route::get('/call/event',function(){
     $user=auth()->user();
     //dd($user);
     event(new LoginEvent($user));
-});
+})->name('call.event');

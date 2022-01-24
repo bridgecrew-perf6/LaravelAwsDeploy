@@ -524,5 +524,18 @@
             </div>
         </div>
     </div>
+    <script src="{{ mix('js/app.js') }}" ></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            alert('jquery');
+            
+            window.Echo.channel('signin')
+            .subscribed(()=>console.log('This Channel Is Subscribed Now'))
+            .listen('LoginEvent',function(user){
+                console.log(user);
+            });
+        })
+    </script>
 </body>
 </html>

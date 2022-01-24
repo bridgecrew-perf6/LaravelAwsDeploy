@@ -5,6 +5,7 @@ namespace App\Listeners;
 use App\Events\LoginEvent;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Http\Request;
 
 class LoginEventListener
 {
@@ -26,7 +27,7 @@ class LoginEventListener
      */
     public function handle(LoginEvent $event)
     {
-       // dd($event);
+       
 
       
     }
