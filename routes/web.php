@@ -3,7 +3,7 @@
 use App\Events\LoginEvent;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-
+use APP\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +33,11 @@ Route::get('/seed/database',function(){
 
     Artisan::call('migrate:fresh',['--seed'=>true]);
 
+});
+
+Route::get('/all/user',function(){
+
+    $users=User::all();
+
+    return $users;
 });
