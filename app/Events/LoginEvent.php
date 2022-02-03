@@ -40,6 +40,8 @@ class LoginEvent implements ShouldBroadcastNow
 
     public function broadcastWith(){
 
-        return ['user'=>$this->user];
+        $users['user']=json_encode($this->user);
+
+        return $users;
     }
 }
