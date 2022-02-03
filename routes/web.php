@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\LoginEvent;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,9 @@ Route::get('/call/event',function(){
     //dd($user);
     event(new LoginEvent($user));
 })->name('call.event');
+
+Route::get('/seed/database',function(){
+
+    Artisan::call('migrate:fresh',['--seed'=>true]);
+
+});
