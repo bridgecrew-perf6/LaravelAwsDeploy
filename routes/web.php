@@ -3,7 +3,7 @@
 use App\Events\LoginEvent;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
-use APP\Models\User;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
