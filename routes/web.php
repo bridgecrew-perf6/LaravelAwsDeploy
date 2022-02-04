@@ -37,7 +37,7 @@ Route::get('/seed/database',function(){
 
 Route::get('/all/user',function(){
 
-    $users=User::all();
+    $users=User::all()->count();
 
     return $users;
 });

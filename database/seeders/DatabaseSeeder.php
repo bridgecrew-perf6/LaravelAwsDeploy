@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\User::factory(100000)->chunk(1000)->create();
+        for($i=0;$i<10000;$i++){
+            \App\Models\User::factory(1000)->create();
+        }
+        
     }
 }
