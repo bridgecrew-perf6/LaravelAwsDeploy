@@ -39,7 +39,7 @@ Route::get('/all/user',function(){
 
    // $users=User::where('id','!=',null)->delete();
 
-   $users=User::all()->chunk(500)->count();
+   $users=User::all()->cursor()->count();
 
     return $users;
 });
