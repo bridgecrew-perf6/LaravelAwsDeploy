@@ -4,7 +4,7 @@ use App\Events\LoginEvent;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\URL;
 
 /*
