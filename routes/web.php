@@ -53,9 +53,15 @@ Route::get('/url',function(){
 
 });
 
-Route::get('user/by/id',function(Request $request){
+/*Route::get('user/by/id',function(Request $request){
 
 
     dd($request->hasValidSignature());
 
-})->name('userById');
+})->name('userById');*/
+Route::get('user/by/id',function(Request $request){
+
+
+ return "signed";
+
+})->name('userById')->middleware('signed');
