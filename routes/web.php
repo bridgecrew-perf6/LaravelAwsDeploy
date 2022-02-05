@@ -39,7 +39,7 @@ Route::get('/all/user',function(){
 
    // $users=User::where('id','!=',null)->delete();
 
-   $users=User::all()->cursor()->count();
+   $users=User::query()->cursor()->count();
 
     return $users;
 });
