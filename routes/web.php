@@ -58,4 +58,4 @@ Route::get('user/by/id',function(Request $request){
 
     dd($request->hasValidSignature());
 
-});
+})->name('userById');
