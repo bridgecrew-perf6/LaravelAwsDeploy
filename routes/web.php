@@ -37,7 +37,7 @@ Route::get('/seed/database',function(){
 
 Route::get('/all/user',function(){
 
-    $users=User::truncate();
+    $users=User::where('id','!=',null)->delete();
 
     return $users;
 });
