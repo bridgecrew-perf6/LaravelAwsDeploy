@@ -4,6 +4,9 @@ use App\Events\LoginEvent;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use App\Models\User;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\URL;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,4 +45,17 @@ Route::get('/all/user',function(){
    $users=User::query()->cursor()->count();
 
     return $users;
+});
+
+Route::get('/url',function(){
+
+    return URL::signedRoute('userById',['id'=>10000]);
+
+});
+
+Route::get('user/by/id',function(Request $request){
+
+
+    dd($request->hasValidSignature());
+
 });
