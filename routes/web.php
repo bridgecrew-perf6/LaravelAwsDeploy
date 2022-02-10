@@ -65,3 +65,12 @@ Route::get('user/by/id',function(Request $request){
  return "signed";
 
 })->name('userById')->middleware('signed');
+
+Route::get('/version',function(){
+
+    $laravel=app();
+    $version=$laravel::VERSION;
+
+    dd($version);
+
+});
