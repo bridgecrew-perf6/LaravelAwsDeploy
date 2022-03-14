@@ -73,4 +73,8 @@ Route::get('/version',function(){
 
     dd($version);
 
+}); 
+
+Route::get('/front/image',function(){
+    return view('front');
 });
